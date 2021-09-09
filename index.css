@@ -1,0 +1,499 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: rgb(161, 203, 219);
+}
+
+/* HEADER  */
+.main header {
+  position: relative;
+  height: 13vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  background: rgb(161, 203, 219);
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+}
+
+.main header a {
+  text-shadow: none;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.main header a:hover {
+  color: white;
+  transition: 0.2s ease-in;
+}
+
+.main header .iconCarrito {
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  font-size: 1.7rem;
+}
+
+.main header .iconCarrito p {
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  font-size: 0.6rem;
+  background-color: #000;
+  padding: 5px 5px;
+  border-radius: 100%;
+}
+
+.logo img {
+  width: 30%;
+}
+
+.main .itemsCaja {
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+}
+
+.main .itemsCaja .item {
+  position: relative;
+  height: 400px;
+  width: 30%;
+  overflow: hidden;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 10px;
+  margin-bottom: 0px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+  background: white;
+  transition: 0.3s ease-out;
+}
+
+.main .itemsCaja .item:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-out;
+  /* background: rgba(153, 153, 153, 0.26); */
+}
+
+.main .itemsCaja .item img {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.main .itemsCaja .item h1 {
+  position: relative;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.main .itemsCaja .item p {
+  position: relative;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding: 10px 0;
+  color: #017bf5;
+  margin-bottom: 20px;
+}
+
+.main .itemsCaja .item a {
+  position: relative;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  background: #0f0f0f;
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.main .itemsCaja .item a:hover {
+  transition: 0.2s ease;
+  color: #303030;
+  background: rgb(161, 203, 219);
+}
+
+/* CARRITO  */
+.cajaCarrito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  transition: 0.3s ease-in-out;
+  transform: scale(0);
+}
+
+.cajaCarrito.active {
+  transform: scale(1);
+}
+
+.cajaCarrito .carrito {
+  position: relative;
+  height: 70%;
+  width: 90%;
+  background: white;
+  box-shadow: 0.3em 0.3em 2em rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cajaCarrito .carrito i {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: red;
+  transition: 0.2s ease;
+  padding: 10px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.cajaCarrito .carrito i:hover {
+  background: rgb(134, 0, 0);
+  transition: 0.2s ease;
+}
+
+.cajaCarrito .carrito h1 {
+  position: relative;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 2.5rem;
+  color: rgb(161, 203, 219);
+}
+
+/* TABLA CARRITO  */
+table {
+  width: 90%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 0.3px solid rgb(85, 85, 85, 0.5);
+  padding: 10px;
+  text-align: left;
+}
+
+.tituloTabla {
+  background: rgb(161, 203, 219);
+}
+
+.btnEliminar {
+  background: rgb(161, 203, 219);
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.btnEliminar:hover {
+  transition: 0.2s ease;
+  background: rgb(118, 182, 207);
+}
+
+table a {
+  color: black;
+  text-decoration: none;
+}
+
+.divTotal {
+  background-color: rgb(161, 203, 219);
+  width: 90%;
+  margin-top: 100px;
+  padding: 8px;
+  display: flex;
+  border: 0.3px solid rgb(85, 85, 85, 0.5);
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+#total {
+  font-weight: 800;
+  color: red;
+}
+
+/* FOOTER  */
+footer {
+  height: 10vh;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  font-size: 0.8rem;
+  color: rgb(161, 203, 219);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* texto comienzo  */
+.servicios h2 {
+  margin-left: 40px;
+  font-size: 1.3rem;
+}
+
+/* caja mas info  */
+
+.contenido {
+  margin: 45px;
+  padding: 60px 40px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#contenedorAbajo {
+  margin: auto;
+  padding: 40px;
+  margin-top: 20px;
+  border-radius: 7px;
+  color: white;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+#contenedorAbajo p:nth-child(1) {
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+}
+
+#contenedorAbajo p:last-child {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: white;
+  font-style: italic;
+}
+
+#contenedorAbajo p:last-child a {
+  font-weight: bold;
+  color: rgb(165, 165, 165);
+}
+
+.contenido button:first-child {
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contenido button:first-child:hover {
+  transition: 0.3s ease;
+  background-color: rgb(161, 203, 219);
+  color: black;
+}
+
+.contenido button:nth-child(2) {
+  padding: 8px 13px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  background: red;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+  position: relative;
+  left: 1110px;
+  top: 40px;
+}
+
+.contenido button:nth-child(2):hover {
+  background: rgb(134, 0, 0);
+  transition: 0.2s ease;
+}
+
+/* ver mas  */
+.contenedorverMas {
+  height: auto;
+  width: 94%;
+  margin: 0 auto;
+  padding: 60px;
+  background-image: url(img/web.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+}
+
+#verMas {
+  padding: 10px 15px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 200px;
+  transition: 0.3s ease-in;
+}
+
+#verMas:hover {
+  background: rgb(161, 203, 219);
+  color: black;
+}
+
+.contenidoverMas {
+  padding-top: 50px;
+}
+
+.contenidoverMas p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.contenidoverMas span {
+  text-decoration: underline;
+  font-style: italic;
+  color: rgb(49, 49, 49);
+}
+
+/* banner */
+
+.banner {
+  background-image: url(img/banner.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  margin-bottom: 40px;
+}
+
+.contBanner {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contBanner h1 {
+  color: white;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.5);
+  font-size: 60px;
+}
+
+.contBanner p {
+  color: white;
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+
+.contBanner a {
+  background: rgb(161, 203, 219);
+  font-weight: bolder;
+  color: black;
+  text-decoration: none;
+  padding: 10px 25px;
+  border-radius: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: 0.3s ease-in;
+}
+
+.contBanner a:hover {
+  background: black;
+  color: rgb(161, 203, 219);
+  transition: 0.3s ease-in;
+}
+
+/* galeria  */
+#slider {
+  width: 94%;
+  height: 95vh;
+  margin: 50px auto;
+  position: relative;
+}
+
+#slider h2 {
+  font-size: 1.9rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-style: italic;
+}
+
+div#slider {
+  overflow: hidden;
+}
+
+div#slider figure img {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  transition: 1s ease-in-out;
+}
+
+.btn-next,
+.btn-prev {
+  background: none;
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 60px;
+  border: none;
+  transition: 0.2s ease;
+}
+
+.btn-next:active,
+.btn-prev:active {
+  color: white;
+  transition: 0.2s ease;
+}
+
+.btn-prev {
+  left: 0px;
+}
+.btn-next {
+  right: 0px;
+}
