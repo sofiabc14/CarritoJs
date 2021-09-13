@@ -146,3 +146,17 @@ $(document).ready(function () {
         $('figure').css('left', -x + '%');
     });
 });
+
+$("#form").submit(function (e) {
+    e.preventDefault();
+    let inicioSesion = $(e.target).children();
+
+    localStorage.setItem('Nombre', JSON.stringify(inicioSesion[1].value));
+    localStorage.setItem('Apellido', JSON.stringify(inicioSesion[3].value));
+
+    nombre = inicioSesion[1].value;
+    apellido = inicioSesion[3].value;
+
+    $("<p class='usuario'>Nombre: " + nombre + " " + apellido + "</p>").insertAfter(".comprar");
+    $(".sectionSesion").slideToggle();
+});

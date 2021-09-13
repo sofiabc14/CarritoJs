@@ -149,7 +149,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99999;
+  /* z-index: 99999; */
   transition: 0.3s ease-in-out;
   transform: scale(0);
 }
@@ -229,7 +229,7 @@ table a {
 .divTotal {
   background-color: rgb(161, 203, 219);
   width: 90%;
-  margin-top: 100px;
+  margin-top: 50px;
   padding: 8px;
   display: flex;
   border: 0.3px solid rgb(85, 85, 85, 0.5);
@@ -242,6 +242,30 @@ table a {
 #total {
   font-weight: 800;
   color: red;
+}
+
+.comprar {
+  margin-top: 15px;
+  background-color: black;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.comprar:hover {
+  transition: 0.3s ease;
+  background-color: rgb(161, 203, 219);
+  color: black;
 }
 
 /* FOOTER  */
@@ -384,7 +408,7 @@ footer {
   font-weight: 600;
 }
 
-.contenidoverMas span {
+.contenidoverMas span a {
   text-decoration: underline;
   font-style: italic;
   color: rgb(49, 49, 49);
@@ -496,4 +520,78 @@ div#slider figure {
 }
 .btn-next {
   right: 0px;
+}
+
+/* FORM INICIO SESION*/
+
+.sectionSesion {
+  text-align: center;
+  padding: 20px 50px 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionSesion h2 {
+  margin-bottom: 30px;
+}
+
+form {
+  width: 60%;
+  padding: 50px;
+  border-radius: 10px;
+  margin: auto;
+  background-color: white;
+}
+
+form label {
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+form input {
+  width: 300px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(196, 196, 196, 0.589);
+  margin: 8px 0;
+  display: inline-block;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+  width: 390px;
+  padding: 8px 16px;
+  margin: 0 auto;
+  margin-top: 32px;
+  border: none;
+  border-radius: 8px;
+  display: block;
+  font-weight: bolder;
+  transition: 0.3s ease-in;
+  background: black;
+  color: rgb(161, 203, 219);
+}
+
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+  cursor: pointer;
+  background: rgb(161, 203, 219);
+  color: black;
+}
+
+form input[type="reset"] {
+  margin-top: 10px;
+}
+
+/* usuario activo (nombre en carrito) */
+
+.usuario{
+  margin-top: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-style: italic;
 }
