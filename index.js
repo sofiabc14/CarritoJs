@@ -1,7 +1,5 @@
 window.onload = function () {
-
     total = 0;
-    precio = 0;
 
     // CARRITO
     const cajaCarrito = document.querySelector('.cajaCarrito');
@@ -16,7 +14,7 @@ window.onload = function () {
         cajaCarrito.classList.remove('active');
     });
 
-    // agregar mensaje d principio 
+    // agregar mensaje de principio 
     $(".servicios").prepend("<h2> Seleccione los servicios que desea comprar: </h2>");
 
     // LOCAL STORAGE 
@@ -66,16 +64,15 @@ window.onload = function () {
 
     iconCarritoP.innerHTML = num;
 
-    // agregar al carrito tabla 
+    // agregar al carrito (tabla) 
     const cajaCarritoTabla = cajaCarrito.querySelector('table');
     let datosTabla = '';
     datosTabla += '<tr><th class="tituloTabla">Id</th><th class="tituloTabla">Nombre</th><th class="tituloTabla">Cantidad</th><th class="tituloTabla">Precio</th><th class="tituloTabla"></th></tr>';
-    if (JSON.parse(localStorage.getItem('items'))[0] === null) {
-        // no entiendo por que esto no funciona????
-        datosTabla += '<tr><th> No agregó ningún item </th></tr>'
+    if (JSON.parse(localStorage.getItem('items'))[0] == null) {
+        datosTabla += `<p> No agregó ningún item </p>`;
     } else {
         JSON.parse(localStorage.getItem('items')).map(data => {
-            datosTabla += '<tr><th>' + data.id + '</th><th>' + data.nombre + '</th><th>' + data.num + '</th><th>$' + (data.precio * data.num) + '</th><th class="btnEliminar"><a href="#" onclick=eliminar(this);>Eliminar</a></th></tr>';
+            datosTabla += `<tr><th>` + data.id + `</th><th>` + data.nombre + `</th><th>` + data.num + `</th><th>$` + (data.precio * data.num) + `</th><th class="btnEliminar"><a href="#" onclick=eliminar(this);>Eliminar</a></th></tr>`;
             // mostrar 
             precio = parseInt(data.precio) * parseInt(data.num);
             total = total + precio;
@@ -84,12 +81,12 @@ window.onload = function () {
     }
     let cajaMostrarTotal = document.getElementById("total");
 
-    // mostrar tabla y total 
-    cajaMostrarTotal.textContent = (total);
+    // mostrar tabla y total carrito  
+    cajaMostrarTotal.textContent = "$" + total;
     cajaCarritoTabla.innerHTML = datosTabla;
 }
 
-// eliminar del carrito 
+// eliminar items del carrito 
 function eliminar(e) {
     let items = [];
     JSON.parse(localStorage.getItem('items')).map(data => {
@@ -147,6 +144,8 @@ $(document).ready(function () {
     });
 });
 
+
+// nombre y apellido 
 $("#form").submit(function (e) {
     e.preventDefault();
     let inicioSesion = $(e.target).children();
@@ -157,6 +156,6 @@ $("#form").submit(function (e) {
     nombre = inicioSesion[1].value;
     apellido = inicioSesion[3].value;
 
-    $("<p class='usuario'>Nombre: " + nombre + " " + apellido + "</p>").insertAfter(".comprar");
     $(".sectionSesion").slideToggle();
+    $("<p class='usuario'>Nombre: " + nombre + " " + apellido + "</p>").insertAfter(".comprar");
 });

@@ -1,3 +1,4 @@
+/* ESTILOS GENERALES  */
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +17,7 @@ body {
   background: rgb(161, 203, 219);
 }
 
-/* HEADER  */
+/* MENU  */
 .main header {
   position: relative;
   height: 13vh;
@@ -92,7 +93,6 @@ body {
 .main .itemsCaja .item:hover {
   transform: scale(1.1);
   transition: 0.3s ease-out;
-  /* background: rgba(153, 153, 153, 0.26); */
 }
 
 .main .itemsCaja .item img {
@@ -244,6 +244,7 @@ table a {
   color: red;
 }
 
+/* BOTON COMPRAR  */
 .comprar {
   margin-top: 15px;
   background-color: black;
@@ -268,30 +269,13 @@ table a {
   color: black;
 }
 
-/* FOOTER  */
-footer {
-  height: 10vh;
-  width: 100%;
-  margin-top: 30px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  font-size: 0.8rem;
-  color: rgb(161, 203, 219);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-/* texto comienzo  */
+/* TEXTO SERVICIOS  */
 .servicios h2 {
   margin-left: 40px;
   font-size: 1.3rem;
 }
 
-/* caja mas info  */
-
+/* CAJA MAS INFORMACION  */
 .contenido {
   margin: 45px;
   padding: 60px 40px;
@@ -371,7 +355,7 @@ footer {
   transition: 0.2s ease;
 }
 
-/* ver mas  */
+/* CAJA VER MAS  */
 .contenedorverMas {
   height: auto;
   width: 94%;
@@ -414,8 +398,7 @@ footer {
   color: rgb(49, 49, 49);
 }
 
-/* banner */
-
+/* BANNER */
 .banner {
   background-image: url(img/banner.jpg);
   background-size: cover;
@@ -464,7 +447,7 @@ footer {
   transition: 0.3s ease-in;
 }
 
-/* galeria  */
+/* GALERIA DE IMAGENES  */
 #slider {
   width: 94%;
   height: 95vh;
@@ -523,7 +506,6 @@ div#slider figure {
 }
 
 /* FORM INICIO SESION*/
-
 .sectionSesion {
   text-align: center;
   padding: 20px 50px 70px;
@@ -575,7 +557,6 @@ form input[type="reset"] {
   color: rgb(161, 203, 219);
 }
 
-
 form input[type="submit"]:hover,
 form input[type="reset"]:hover {
   cursor: pointer;
@@ -588,10 +569,116 @@ form input[type="reset"] {
 }
 
 /* usuario activo (nombre en carrito) */
-
-.usuario{
+.usuario {
   margin-top: 15px;
   font-size: 1.2rem;
   font-weight: bold;
   font-style: italic;
+}
+
+/* FOOTER  */
+footer {
+  height: 10vh;
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  font-size: 0.8rem;
+  color: rgb(161, 203, 219);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* MEDIAQUERIES  */
+/* 
+@media (max-width: 1278px) {
+  .main .itemsCaja {
+    flex-direction: column;
+  }
+} */
+
+/* celular  */
+@media (max-width: 768px) {
+  /* banner  */
+  .banner {
+    padding: 150px 60px 0px;
+    margin-bottom: 0px;
+  }
+
+  .contBanner {
+    position: initial;
+    transform: none;
+  }
+
+  .contBanner h1 {
+    margin-top: 0px;
+    font-size: 50px;
+  }
+
+  .contBanner a {
+    font-size: 18px;
+  }
+
+  /* servicios  */
+  .main .itemsCaja {
+    flex-direction: column;
+  }
+  .main .itemsCaja .item {
+    height: 450px;
+    width: 100%;
+  }
+
+  .main .itemsCaja .item:hover {
+    transform: none;
+  }
+
+  .servicios h2 {
+    text-align: center;
+    margin: 30px 40px 0px;
+  }
+
+  /* form  */
+  .sectionSesion {
+    text-align: center;
+    padding: 0px;
+  }
+
+  form {
+    width: auto;
+  }
+
+  form input {
+    width: auto;
+  }
+
+  form input[type="submit"],
+  form input[type="reset"] {
+    width: 100%;
+  }
+
+  /* slider  */
+
+  #slider {
+    width: 94%;
+    height: auto;
+    margin: 50px auto;
+  }
+
+  .btn-next,
+  .btn-prev {
+    top: 50%;
+  }
+
+  #slider i {
+    font-size: 40px;
+  }
+
+  /* caja mas info  */
+  .contenido button:nth-child(2) {
+    left: 170px;
+    top: 40px;
+  }
 }
