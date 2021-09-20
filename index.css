@@ -518,56 +518,6 @@ div#slider figure {
   margin-bottom: 30px;
 }
 
-form {
-  width: 60%;
-  padding: 50px;
-  border-radius: 10px;
-  margin: auto;
-  background-color: white;
-}
-
-form label {
-  font-weight: bold;
-  display: inline-block;
-  margin-right: 5px;
-}
-
-form input {
-  width: 300px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: rgba(196, 196, 196, 0.589);
-  margin: 8px 0;
-  display: inline-block;
-}
-
-form input[type="submit"],
-form input[type="reset"] {
-  width: 390px;
-  padding: 8px 16px;
-  margin: 0 auto;
-  margin-top: 32px;
-  border: none;
-  border-radius: 8px;
-  display: block;
-  font-weight: bolder;
-  transition: 0.3s ease-in;
-  background: black;
-  color: rgb(161, 203, 219);
-}
-
-form input[type="submit"]:hover,
-form input[type="reset"]:hover {
-  cursor: pointer;
-  background: rgb(161, 203, 219);
-  color: black;
-}
-
-form input[type="reset"] {
-  margin-top: 10px;
-}
-
 /* usuario activo (nombre en carrito) */
 .usuario {
   margin-top: 15px;
@@ -593,12 +543,6 @@ footer {
 }
 
 /* MEDIAQUERIES  */
-/* 
-@media (max-width: 1278px) {
-  .main .itemsCaja {
-    flex-direction: column;
-  }
-} */
 
 /* celular  */
 @media (max-width: 768px) {
@@ -638,25 +582,6 @@ footer {
   .servicios h2 {
     text-align: center;
     margin: 30px 40px 0px;
-  }
-
-  /* form  */
-  .sectionSesion {
-    text-align: center;
-    padding: 0px;
-  }
-
-  form {
-    width: auto;
-  }
-
-  form input {
-    width: auto;
-  }
-
-  form input[type="submit"],
-  form input[type="reset"] {
-    width: 100%;
   }
 
   /* slider  */

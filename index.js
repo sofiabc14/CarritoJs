@@ -154,7 +154,7 @@ $("#form").submit(function (e) {
     localStorage.setItem('Apellido', JSON.stringify(inicioSesion[3].value));
 
     nombre = inicioSesion[1].value;
-    apellido = inicioSesion[3].value;
+    apellido = inicioSesion[4].value;
 
     $(".sectionSesion").slideToggle();
     $("<p class='usuario'>Nombre: " + nombre + " " + apellido + "</p>").insertAfter(".comprar");
